@@ -1,0 +1,30 @@
+El elemento:
+
+<f:facet name="header">
+           <h1 style="display:inline-table">#{label['cambioClave.header']}</h1>
+           <p:commandLink process="@this"  onclick="JavaScript:newPopup('../../sore_guia/pags_guias_completas/pasos/cambiar_contrasenna.html#cambioClavePaso3');" >
+                      [Ayuda]
+           </p:commandLink>
+           <p:separator/>
+</f:facet>
+
+Se elimina.
+
+-------------------------------------------------
+
+El encabezado de la página se reemplaza de la siguiente forma:
+
+<h:panelGrid columns="1" class="panelFormulario formCambioClave">
+            
+            <f:facet name="header">
+                <div class="contEncabezadoModulo">
+                    <h:outputText value="#{label['cambioClave.header']}" class="encabezado"/>
+                    <a href="#" class="linkAyuda">
+                        <span class="textoLinkAyuda">[Ayuda Módulo]</span>
+                        <div class="iconoLinkAyuda"></div>
+                    </a>
+                </div>
+            </f:facet>
+
+…
+

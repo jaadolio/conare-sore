@@ -1,0 +1,23 @@
+El elemento:
+
+     <p:commandLink process="@this" 
+           onclick="JavaScript:newPopup('../../sore_guia/pags_guias_completas/pasos/registro_sistema.html#registrarsePaso2')">
+          #{label['labelAyudaPaginas']}
+     </p:commandLink>
+
+ubicado junto a “<h:outputText value="#{label['registro.encabezado']}" class="encabezado"/>” hay que eliminarlo.
+
+-----------------------------------------------------
+
+El encabezado de la página junto con el vínculo de ayuda se debe acomodar así:
+
+       <div class="contEncabezadoModulo">
+            
+            <h:outputText value="#{label['registro.encabezado']}" class="encabezado"/>
+            
+            <a href="#" class="linkAyuda">
+                <span class="textoLinkAyuda">[Ayuda Módulo]</span>
+                <div class="iconoLinkAyuda"></div>
+            </a>
+
+       </div>

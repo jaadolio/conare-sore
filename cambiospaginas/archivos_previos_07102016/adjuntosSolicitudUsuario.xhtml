@@ -1,0 +1,38 @@
+Modificar la estructura de visualización del elemento <h1> del encabezado de la siguiente forma:
+
+       <h1>#{label['administracionArchivos.docAdjunta']}</h1>
+
+       <a href="#ayudaAdjuntosSolicitud" class="linkAyuda">
+             <span class="textoLinkAyuda">[Ayuda Módulo]</span>
+             <div class="iconoLinkAyuda"></div>
+        </a>
+        
+-------------------------------------------------------------
+
+Al elemento “<h:outputText value="#{beanAdjuntosSolicitud.dscExpediente}" escape="false" />” hay que agregarle la propiedad “style:'display:none;'”, ya que el estilo de esta información será modificado a nivel del FrontEnd usando Javascript.
+
+Dicho elemento quedará de la siguiente forma: <h:outputText value="#{beanAdjuntosSolicitud.dscExpediente}" escape="false" style='display:none;' />
+
+-------------------------------------------------------------
+
+Al elemento:
+
+<p:commandLink id="todos" 
+          value="#{label['administracionArchivos.descargartodo']}" 
+          ajax="false" action="#{beanAdjuntosSolicitud.descargarZip}" 
+          style="margin-right:20px;" 
+          rendered="#{beanAdjuntosSolicitud.puede}">   
+           <p:fileDownload value="#{beanAdjuntosSolicitud.todo}" />  
+</p:commandLink>
+
+Hay que eliminarle la propiedad “style='margin-right:20px;'” e incluirle la propiedad “styleClass='descargaArchs'”. Al final el elemento quedará así:
+
+<p:commandLink id="todos"
+           value="#{label['administracionArchivos.descargartodo']}"
+           ajax="false"
+           action="#{beanAdjuntosSolicitud.descargarZip}"
+           styleClass="descargaArchs"
+           rendered="#{beanAdjuntosSolicitud.puede}">
+           <p:fileDownload value="#{beanAdjuntosSolicitud.todo}" />
+</p:commandLink>
+

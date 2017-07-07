@@ -1,0 +1,48 @@
+Antes de la definición de los elementos:
+        <p:growl id="growl" showDetail="true" globalOnly="true"/>
+        <h:panelGrid columns="1" class="panelFormulario">
+        <h:panelGrid columns="1" class="panelGridFormulario">
+
+Se debe incluir lo siguiente:
+
+        <div class="encabRecuperaClave">
+                <div class="elementosEncab">
+                        <div class="iconoRecuperaClave"></div>
+                        <div class="tituloEncabRecuperaClave">#{label['formulario.label.recupereClave']}</div>
+                        <a href="#" class="linkAyuda">
+                                <span class="textoLinkAyuda">[Ayuda Módulo]</span>
+                                <div class="iconoLinkAyuda"></div>
+                        </a>
+                </div>
+        </div> 
+        
+--------------------------------------------------------------
+
+El elemento: 
+
+       <f:facet name="header">
+              <p:graphicImage url="../../../recursos/imagenes/e_mail.ico" width="62" height="62" style="display:inline-table"/>
+              <h1 style="display:inline-table">#{label['formulario.label.recupereClave']}</h1>
+              <p:commandLink process="@this" 
+                     onclick="window.open ('../../sore_guia/pags_guias_completas/pasos/olvidar_contrasenna.html#inicioRegistro',
+                                          'mywindow','menubar=1,resizable=1,width=1000,height=1000');">[Ayuda]</p:commandLink>
+              <!--<p:commandLink process="@this" 
+                     onclick="JavaScript:newPopup('../../sore_guia/pags_guias_completas/pasos/olvidar_contrasenna.html#inicioRegistro')" >[Ayuda]</p:commandLink>-→
+              <p:separator/>
+       </f:facet>
+
+Hay que eliminarlo
+
+--------------------------------------------------------------
+
+Los elementos:
+
+       <h:outputText value="#{label['instrucciones']} " style="font-weight:bold; "/>
+       <h:outputText value="#{label['info.label.cambioClave']}" style="vertical-align: top;" />
+
+Hay que cambiarles el estilo por:
+
+       <h:outputText value="#{label['instrucciones']}" styleClass="titInstrucciones" />
+       <h:outputText value="#{label['info.label.cambioClave']}" styleClass="lstInstrucciones" />
+       
+--------------------------------------------------------------

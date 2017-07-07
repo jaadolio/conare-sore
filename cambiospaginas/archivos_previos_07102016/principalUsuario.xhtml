@@ -1,0 +1,32 @@
+El elemento 
+
+  “<h:commandLink  onclick="window.open('../../sore_guia/pags_guias_completas/pasos/adjuntar_recibo.html')" >[Ayuda]</h:commandLink>” 
+  
+  hay que eliminarlo…
+  
+----------------------------------------------------
+
+Incluir junto al botón “Nueva Solicitud” los siguientes vínculos:
+
+     <div class="contElementosEncabezado">
+             <a href="#ayudaLlenadoFormulario" class="linkAyuda">
+                  <span class="textoLinkAyuda">[Ayuda Llenado Formulario]</span>
+                  <div class="iconoLinkAyuda"></div>
+             </a>
+             <a href="#ayudaAdjuntarRecibo" class="linkAyuda">
+                  <span class="textoLinkAyuda">[Ayuda Adjuntar Recibo Pago]</span>
+                  <div class="iconoLinkAyuda"></div>
+             </a>
+     </div>
+
+----------------------------------------------------
+
+Cambiar estilo elementos “<h:outputText id='ayuda'” y “<h:outputText id='ayudaUniversidad'” por:
+
+       <h:outputText id="ayuda" styleClass="mensajesSolicitud" escape="false" />
+       <h:outputText id="ayudaUniversidad" 
+                                 StyleClass="mensajesSolicitud" 
+                                 value="#{beanUsuarioPrincipal.ayudaEstadoUniversidad}" 
+                                 escape="false" rendered="true" />
+
+----------------------------------------------------
